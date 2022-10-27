@@ -10,7 +10,7 @@ public class Players {
     public boolean agregarJugador(Jugador jugador) {
         String rut = jugador.getRut();
 
-        //TODO agregar validacion del dibito verificador quedaria algo así ->  if(!jugadorExiste(rut) && DigitoVerificador.validarRut(rut)) {
+        //TODO agregar validacion del dígito verificador quedaria algo así ->  if(!jugadorExiste(rut) && DigitoVerificador.validarRut(rut)) {
         if(!jugadorExiste(rut) ) {
             jugadores.add(jugador);
             return true;
