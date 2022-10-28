@@ -1,12 +1,14 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConjuntoJugadores {
     private List<Jugador> jugadores;
 
+    //TODO linea comentada por produce un null, probar si funciona sin este metodo sino volver a dejarla
     public ConjuntoJugadores() {
-        this.jugadores = jugadores;
+        this.jugadores = new ArrayList<>();
     }
 
     public boolean agregarJugador(Jugador jugador) {
@@ -43,5 +45,7 @@ public class ConjuntoJugadores {
         }
         throw new JugadorNoEncontradoException();
     }
+
+
 
 }
