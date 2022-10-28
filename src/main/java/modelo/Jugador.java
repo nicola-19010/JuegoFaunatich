@@ -1,6 +1,9 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Jugador {
+    private ArrayList<Animal> listaAnimal;
     private String nombre;
     private String rut;
     private String contraseña;
@@ -24,10 +27,14 @@ public class Jugador {
     }
 
     public String toString() {
-        return "modelo.Jugador{" +
-                "nombre='" + nombre + '\'' +
-                ", rut='" + rut + '\'' +
-                ", contraseña='" + contraseña + '\'' +
-                '}';
+        return nombre +";"+rut+";"+contraseña;
+    }
+
+    public void agregarPokemon(Animal animal){
+        listaAnimal.add(animal);
+    }
+
+    public void agregarPokemon(ArrayList<Animal> listaAnimal){
+        this.listaAnimal = listaAnimal;
     }
 }
