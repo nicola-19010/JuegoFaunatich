@@ -1,9 +1,11 @@
+package modelo;
+
 import java.util.List;
 
-public class Players {
+public class ConjuntoJugadores {
     private List<Jugador> jugadores;
 
-    public Players(List<Jugador> jugadores) {
+    public ConjuntoJugadores() {
         this.jugadores = jugadores;
     }
 

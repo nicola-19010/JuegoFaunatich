@@ -1,3 +1,5 @@
+package modelo;
+
 public class Jugador {
     private String nombre;
     private String rut;
@@ -22,7 +24,7 @@ public class Jugador {
     }
 
     public String toString() {
-        return "Jugador{" +
+        return "modelo.Jugador{" +
                 "nombre='" + nombre + '\'' +
                 ", rut='" + rut + '\'' +
                 ", contraseña='" + contraseña + '\'' +
