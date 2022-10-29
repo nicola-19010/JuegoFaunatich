@@ -1,5 +1,7 @@
 package modelo;
 
+import dato.VerificadorRut;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class ConjuntoJugadores {
         String rut = jugador.getRut();
 
         //TODO agregar validacion del dígito verificador quedaria algo así ->  if(!jugadorExiste(rut) && DigitoVerificador.validarRut(rut)) {
-        if(!jugadorExiste(rut) ) {
+        if(!jugadorExiste(rut) && VerificadorRut.validarRut(rut)){
             jugadores.add(jugador); //el index 0 es para que lo agregue en la primera posicion
             return true;
         }

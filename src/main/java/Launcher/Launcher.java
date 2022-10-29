@@ -23,27 +23,6 @@ public class Launcher {
         Jugador pedro = new Jugador("Pedro", "2222222222", "pedrocontrasena");
         Jugador pablo = new Jugador("pablo", "333333333", "pablocontrasena");
 
-        //conjuntoJugadores.agregarJugador(juanito);
-
-
-        //DatosJugadores.registrarDatos(juanito, "conjuntoJugadores.txt");
-        //DatosJugadores.registrarDatos(marcelo,"conjuntoJugadores.txt");
-
-
-        //DatosJugadores.registrarDatos(marcelo,"conjuntoJugadores.txt" );
-        //DatosJugadores.registrarDatos(juanito,"conjuntoJugadores.txt");
-        //DatosJugadores.leerArchivoJugador(conjuntoJugadores, "C:\\Users\\npach\\IdeaProjects\\JuegoFaunatich\\conjuntoJugadores.txt");
-
-        //conjuntoJugadores.agregarJugador(jesus);
-        //conjuntoJugadores.agregarJugador(pedro);
-
-
-        System.out.println(conjuntoJugadores.agregarJugador(marcelo));
-        System.out.println(conjuntoJugadores.agregarJugador(jesus));
-        System.out.println(conjuntoJugadores.agregarJugador(juanito));
-
-        guardarCuenta(marcelo);
-
 
         //Metodo de esta clase que imprime las cuentas
         /*for (var jugador: conjuntoJugadores.getJugadores()) {
@@ -54,17 +33,9 @@ public class Launcher {
             System.out.println(jugador.toString());
         }*/
 
-        //Animal animal1 = new Animal("ABC", "30", "4","2","1");
-        //Animal animal2 = new Animal("DEF","35","4","2", "2");
-        //ArrayList<Animal> listaAnimal = new ArrayList<>();
-
 
     }
-    /*public static void guardarCuenta(ConjuntoJugadores conjuntoJugadores){
-        DatosJugadores.registrarDatos(conjuntoJugadores.getJugadores().get(0),"C:\\Users\\npach\\IdeaProjects\\JuegoFaunatich\\conjuntoJugadores.txt");
-    }*/
 
-    public static void guardarCuenta(Jugador jugador){
-        DatosJugadores.registrarDatos(jugador,"C:\\Users\\npach\\IdeaProjects\\JuegoFaunatich\\conjuntoJugadores.txt");
-    }
+
+
 }
