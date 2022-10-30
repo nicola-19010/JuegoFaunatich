@@ -39,9 +39,9 @@ public class ConjuntoJugadores {
     }
 
     public Jugador buscarJugadorPorRut(String rut) throws JugadorNoEncontradoException {
-        for (Jugador e : this.jugadores) {
-            if (e.getRut().equals(rut)) {
-                return e;
+        for (Jugador j : this.jugadores) {
+            if (j.getRut().equals(rut)) {
+                return j;
             }
         }
         throw new JugadorNoEncontradoException();

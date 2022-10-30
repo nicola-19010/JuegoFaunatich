@@ -23,32 +23,31 @@ public class PortalDeInicio {
     }
 
 
-    public static void mostrarOpcionesPortalInicio(){
+    public static void mostrarOpcionesPortalInicio(ConjuntoJugadores conjuntoJugadores){
         System.out.println("""
                 FAUNATICH.
                 Elija alguna opcion:
                 1. Iniciar Sesión.
                 2. Crear Cuenta.""");
-        opcionesPortalInicio(ingresar());
+        opcionesPortalInicio(conjuntoJugadores, ingresar());
     }
 
-    private static void opcionesPortalInicio(int opcionIngresada){
+    private static void opcionesPortalInicio(ConjuntoJugadores conjuntoJugadores, int opcionIngresada){
         switch (opcionIngresada) {
-            case 1 -> iniciarSesion();
-            case 2 -> crearCuenta();
+            case 1 -> iniciarSesion(conjuntoJugadores);
+            case 2 -> crearCuenta(conjuntoJugadores);
             default -> {
                 System.out.println("Por favor ingrese una opcion válida:");
-                mostrarOpcionesPortalInicio();
+                mostrarOpcionesPortalInicio(conjuntoJugadores);
             }
         }
     }
 
-    public static void crearCuenta(){
+    public static void crearCuenta(ConjuntoJugadores conjuntoJugadores){
         String nombre = pedirNombre();
         String rut = pedirRut();
         String contrasena = pedirContraseña();
         Jugador jugador = new Jugador(nombre, rut, contrasena);
-        ConjuntoJugadores conjuntoJugadores = new ConjuntoJugadores();
         if(conjuntoJugadores.agregarJugador(jugador)){
             DatosJugadores.registrarDatos(jugador, "C:\\Users\\npach\\IdeaProjects\\JuegoFaunatich\\conjuntoJugadores.txt");
         }else {
@@ -106,10 +105,23 @@ public class PortalDeInicio {
         return ingreso;
     }
 
-    private static void iniciarSesion() {
+    private static void iniciarSesion(ConjuntoJugadores conjuntoJugadores) {
         String rut = pedirRut();
-        //aqui debe ir un metodo que verifique si el rut ya existe
         String contraseña = pedirContraseña();
+        Jugador jugadorTemporalParaValidacion = new Jugador("nicolas",rut,contraseña);
+        System.out.println(conjuntoJugadores.getJugadores().contains(jugadorTemporalParaValidacion));
+
+        //Simplemente: usuario registrado -> bienvenido -> jugar
+                        //usuario no registrado -> portal
+
+        //rut esta registrado
+            //contraseña correcta
+            //contraseña incorrecta
+        //rut no esta registrado
+
+        //Que hace despues de inicio
+        // Un archivo, por cada persona el archivo de cada persona contiene la lista de animalesAmigos
+        //Un archivo que contenga los animales en general
 
     }
 

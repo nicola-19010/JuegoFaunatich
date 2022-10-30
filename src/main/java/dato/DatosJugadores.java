@@ -45,9 +45,7 @@ public class DatosJugadores {
         }
     }
 
-    public static void guardarCuenta(Jugador jugador){
-        DatosJugadores.registrarDatos(jugador,"C:\\Users\\npach\\IdeaProjects\\JuegoFaunatich\\conjuntoJugadores.txt");
-    }
+
 
 
 
