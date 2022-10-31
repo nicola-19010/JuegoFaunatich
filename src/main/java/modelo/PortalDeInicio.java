@@ -108,8 +108,10 @@ public class PortalDeInicio {
     private static void iniciarSesion(ConjuntoJugadores conjuntoJugadores) {
         String rut = pedirRut();
         String contraseña = pedirContraseña();
-        Jugador jugadorTemporalParaValidacion = new Jugador("nicolas",rut,contraseña);
-        System.out.println(conjuntoJugadores.getJugadores().contains(jugadorTemporalParaValidacion));
+        conjuntoJugadores.buscarJugadorPorRut(rut);
+        //Jugador jugadorTemporalParaValidacion = new Jugador("nicolas",rut,contraseña);
+       // var x = conjuntoJugadores.getJugadores().contains(jugadorTemporalParaValidacion);
+       // System.out.println(conjuntoJugadores.getJugadores().contains(jugadorTemporalParaValidacion));
 
         //Simplemente: usuario registrado -> bienvenido -> jugar
                         //usuario no registrado -> portal
