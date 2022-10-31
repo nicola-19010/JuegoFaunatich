@@ -13,17 +13,10 @@ public class PortalDeInicio {
         System.out.println("Este juego te ayudará a aprender sobre la fauna Chilena de una manera muy entretenida.\n");
     }
 
-    public static void mostrarMenu() {
-        System.out.println("""
-                Ingrese una opción:
-                1. Empezar.
-                2. Mostrar estadísticas.
-                3. Ganar vidas.
-                4. Salir del juego.""");
-    }
 
 
-    public static void mostrarOpcionesPortalInicio(ConjuntoJugadores conjuntoJugadores){
+
+    public static void mostrarOpcionesPortalInicio(ConjuntoJugadores conjuntoJugadores) throws JugadorNoEncontradoException {
         System.out.println("""
                 FAUNATICH.
                 Elija alguna opcion:
@@ -32,7 +25,7 @@ public class PortalDeInicio {
         opcionesPortalInicio(conjuntoJugadores, ingresar());
     }
 
-    private static void opcionesPortalInicio(ConjuntoJugadores conjuntoJugadores, int opcionIngresada){
+    private static void opcionesPortalInicio(ConjuntoJugadores conjuntoJugadores, int opcionIngresada) throws JugadorNoEncontradoException {
         switch (opcionIngresada) {
             case 1 -> iniciarSesion(conjuntoJugadores);
             case 2 -> crearCuenta(conjuntoJugadores);
@@ -105,26 +98,28 @@ public class PortalDeInicio {
         return ingreso;
     }
 
-    private static void iniciarSesion(ConjuntoJugadores conjuntoJugadores) {
+    private static void iniciarSesion(ConjuntoJugadores conjuntoJugadores) { //borré el throw considerar para futuros errores
         String rut = pedirRut();
         String contraseña = pedirContraseña();
-        conjuntoJugadores.buscarJugadorPorRut(rut);
-        //Jugador jugadorTemporalParaValidacion = new Jugador("nicolas",rut,contraseña);
-       // var x = conjuntoJugadores.getJugadores().contains(jugadorTemporalParaValidacion);
-       // System.out.println(conjuntoJugadores.getJugadores().contains(jugadorTemporalParaValidacion));
-
-        //Simplemente: usuario registrado -> bienvenido -> jugar
-                        //usuario no registrado -> portal
+        try{
+            var jugadorRegistrado = conjuntoJugadores.buscarJugadorPorRut(rut);
+            if (jugadorRegistrado.getContraseña().equals(contraseña)){
+                System.out.println("Bienvenido "+jugadorRegistrado.getNombre());
+                MenuJuego.mostrarMenu(jugadorRegistrado);
+                //TODO agregar metodo que lleve al juego
+            }else {
+                System.out.println("Contraseña incorrecta intente iniciar sesion nuevamente");
+                iniciarSesion(conjuntoJugadores);
+            }
+        }catch (Exception JugadorNoEncontradoException){
+            System.out.println("No existe un usuario registrado con este rut, intente nuevamente");
+            iniciarSesion(conjuntoJugadores);
+        }
 
         //rut esta registrado
             //contraseña correcta
             //contraseña incorrecta
         //rut no esta registrado
-
-        //Que hace despues de inicio
-        // Un archivo, por cada persona el archivo de cada persona contiene la lista de animalesAmigos
-        //Un archivo que contenga los animales en general
-
     }
 
     private static int ingresar() {

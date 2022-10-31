@@ -48,7 +48,7 @@ public class ConjuntoJugadores {
     }
 
     //Verificar si será
-    public boolean esContraseñaCorrecta(){
+    public boolean esContrasenaCorrecta(){
         return true;
     }
 

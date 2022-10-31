@@ -1,16 +1,13 @@
 package Launcher;
 
 import dato.DatosJugadores;
-import modelo.Animal;
-import modelo.ConjuntoJugadores;
-import modelo.Jugador;
-import modelo.PortalDeInicio;
+import modelo.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Launcher {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JugadorNoEncontradoException {
         ConjuntoJugadores conjuntoJugadores = new ConjuntoJugadores();
         DatosJugadores.leerArchivoJugador(conjuntoJugadores, "C:\\Users\\npach\\IdeaProjects\\JuegoFaunatich\\conjuntoJugadores.txt");
         PortalDeInicio.mostrarTextoDeBienvenida();
