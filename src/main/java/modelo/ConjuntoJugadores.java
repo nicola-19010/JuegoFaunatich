@@ -47,10 +47,7 @@ public class ConjuntoJugadores {
         throw new JugadorNoEncontradoException();
     }
 
-    //Verificar si será
-    public boolean esContrasenaCorrecta(){
-        return true;
-    }
+
 
 
 
