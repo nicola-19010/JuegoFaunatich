@@ -98,6 +98,7 @@ public class PortalDeInicio {
 
     private static void iniciarSesion(ConjuntoJugadores conjuntoJugadores) { //borré el throw considerar para futuros errores
         String rut = pedirRut();
+
         String contraseña = pedirContraseña();
         try{
             var jugadorRegistrado = conjuntoJugadores.buscarJugadorPorRut(rut);
