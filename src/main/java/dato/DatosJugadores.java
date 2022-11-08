@@ -22,7 +22,7 @@ public class DatosJugadores {
         }
     }
 
-    public static boolean registrarDatos(Object objeto, String direccionArchivo) {
+    public static boolean registrarDatos(Jugador objeto, String direccionArchivo) {
         boolean lineaVacia=false;
         try {
             File file = new File(direccionArchivo);
@@ -44,6 +44,8 @@ public class DatosJugadores {
             return false;
         }
     }
+
+
 
 
 
