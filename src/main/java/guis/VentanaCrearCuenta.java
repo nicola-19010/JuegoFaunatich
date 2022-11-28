@@ -104,6 +104,7 @@ public class VentanaCrearCuenta extends JFrame implements ActionListener {
                 cajaDeTextoContrasena.getText().equals("");
     }
 
+
     public void limpiarCajasDeTexto() {
         cajaDeTextoNombre.setText("");
         cajaDeTextoRut.setText("");
