@@ -325,6 +325,4 @@ public class FaunatiCH {
                 2. Mostrar estadísticas.
                 3. Salir del juego.""");
     }
-
-
 }

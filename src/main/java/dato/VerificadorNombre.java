@@ -2,10 +2,14 @@ package dato;
 
 public class VerificadorNombre {
     public static boolean validarNombre(String nombre){
-        if(nombre.length() > 10){
+        return nombre.length() < 11;
+    }
+
+    /*public static boolean validarNombre(String nombre){
+        if(nombre.length() > 10 || nombre.length() < 5){
             return false;
         }else {
             return true;
         }
-    }
+    }*/
 }

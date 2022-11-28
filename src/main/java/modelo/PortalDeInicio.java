@@ -1,7 +1,7 @@
 package modelo;
 
 import dato.DatosJugadores;
-import dato.VerificadorContraseña;
+import dato.VerificadorContrasena;
 import dato.VerificadorNombre;
 import dato.VerificadorRut;
 
@@ -40,7 +40,7 @@ public class PortalDeInicio {
         String contrasena = pedirContraseña();
         Jugador jugador = new Jugador(nombre, rut, contrasena);
         if(conjuntoJugadores.agregarJugador(jugador)){
-            DatosJugadores.registrarDatos(jugador, "C:\\Users\\npach\\IdeaProjects\\JuegoFaunatich\\conjuntoJugadores.txt");
+            DatosJugadores.registrarDatos(jugador, "D:\\Marcelo 2022\\UFRO\\Ingeniería civil informática\\Segundo Semestre 2022\\Asignaturas\\Programación\\Programas IntelliJ\\JuegoFaunatich\\conjuntoJugadores.txt");
         }else {
             System.out.println("Esta cuenta ya existe");
 
@@ -79,8 +79,8 @@ public class PortalDeInicio {
         System.out.println("A continuación deberá ingresar una contraseña, la cual deberá tener letras y números y debe tener por lo menos 5 caracteres y máximo 10.");
         System.out.print("Ingrese una contraseña: ");
         String contrasena = ingresarDatos();
-        VerificadorContraseña.verificarContraseña(contrasena);
-        if(VerificadorContraseña.verificarContraseña(contrasena) == true){
+        VerificadorContrasena.verificarContrasena(contrasena);
+        if(VerificadorContrasena.verificarContrasena(contrasena) == true){
             return contrasena;
         }else{
             System.out.println("Error, la contraseña no es válida, inténtelo nuevamente. ");
